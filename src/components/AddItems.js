@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     AddFrom: {
         padding: '20px 30px',
+        backgroundColor: 'white',
     },
     EventTitle: {
         paddingBottom: '10px'
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
 export default function AddItems(){
     const classes = useStyles();
     return (
-        <div>
+        <React.Fragment>
             <Typography 
                 align="left"
                 variant="h6"
@@ -42,30 +43,50 @@ export default function AddItems(){
                 >
                     Create Event:
                 </Typography>
-                <Grid container>
-                    <Grid item>
-                        <TextField 
-                            label="Event Name"
-                            className={classes.inputItem}
-                            name="eventname"
-                            
-                        />
-                        <TextField
-                            label="Event start date" 
-                            type="date"
-                            name="startdate"
-                            InputLabelProps={{ shrink: true }}
-                        />
-                        <TextField 
-                            label="Event end date" 
-                            type="date"
-                            name="enddate"
-                            InputLabelProps={{ shrink: true }} 
-                            focused
-                        />
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <Grid container spacing={3}>
+                            <Grid item xs={8}>
+                                <TextField 
+                                    label="Event Name"
+                                    className={classes.inputItem}
+                                    name="eventname"
+                                    
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField
+                                    label="Event start date" 
+                                    type="date"
+                                    name="startdate"
+                                    InputLabelProps={{ shrink: true }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextField 
+                                    label="Event end date" 
+                                    type="date"
+                                    name="enddate"
+                                    InputLabelProps={{ shrink: true }} 
+                                    focused
+                                />
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                <TextField
+                                    multiline
+                                    id='Description'
+                                    label='Description'
+                                    name='Description'
+                                    row={4}
+                                    className={classes.inputItem}
+                                />
+                            </Grid>
+                        </Grid>
                     </Grid>
+
+                    <Grid item xs={6}></Grid>
                 </Grid>
             </Paper>
-            
-    </div>);
+    </React.Fragment>);
 }
