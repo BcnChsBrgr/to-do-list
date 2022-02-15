@@ -19,6 +19,8 @@ const useStyles = makeStyles({
 
 export default function AddItems(){
     const classes = useStyles();
+    
+
     return (
         <React.Fragment>
             <Typography 
@@ -50,7 +52,7 @@ export default function AddItems(){
                                 <TextField 
                                     label="Event Name"
                                     className={classes.inputItem}
-                                    name="eventname"
+                                    name="TaskName"
                                     
                                 />
                             </Grid>
@@ -58,7 +60,7 @@ export default function AddItems(){
                                 <TextField
                                     label="Event start date" 
                                     type="date"
-                                    name="startdate"
+                                    name="StartDate"
                                     InputLabelProps={{ shrink: true }}
                                 />
                             </Grid>
@@ -66,7 +68,7 @@ export default function AddItems(){
                                 <TextField 
                                     label="Event end date" 
                                     type="date"
-                                    name="enddate"
+                                    name="EndDate"
                                     InputLabelProps={{ shrink: true }} 
                                     focused
                                 />
@@ -81,6 +83,10 @@ export default function AddItems(){
                                     row={4}
                                     className={classes.inputItem}
                                 />
+                            </Grid>
+
+                            <Grid item xs={12}>
+
                             </Grid>
                         </Grid>
                     </Grid>

@@ -17,28 +17,16 @@ const useStyles = makeStyles({
 });
 function App() {
     const classes = useStyles();
-    let nowDate = new Date()
-    let endDate = new Date(nowDate.getDate() +1)
-    let llss = [
-        {
-            taskID: 1,
-            TaskName: 'Task ABC',
-            StartDate: nowDate,
-            EndDate: endDate
-        },
-        {
-            taskID: 2,
-            TaskName: 'Task BCD',
-            StartDate: nowDate,
-            EndDate: endDate
-        }
-    ];
+    let cookieRecord = [{TaskName: '食飯', StartDate: new Date()}]
+    // let cookieRecord = document.cookie == ''? [] : JSON.parse(document.cookie)
+    
     return (
     <div className={`${classes.root}`}>
         <Box sx={{ flexGrow: 1 }}> <MenuBar /> </Box>
         <div className={`${classes.bodyContainer}`}>
             <Routes>
-                <Route path="/schedule" element={<DisplayItems DisplayItems={llss}/>}/>
+            <Route path="/" element={<DisplayItems DisplayItems={cookieRecord}/>}/>
+                <Route path="/schedule" element={<DisplayItems DisplayItems={cookieRecord}/>}/>
                 <Route path="/add" element={<AddItems />} />
             </Routes>
         </div>
